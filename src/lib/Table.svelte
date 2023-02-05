@@ -1,12 +1,7 @@
 <script>
 import "@picocss/pico/css/pico.min.css";
+import Entry from "./Entry.svelte";
 export let content;
-const table = {
-    Complete: "color:green;",
-    Failed: "color:red;",
-    Pending: "color:#bbb;",
-    Ongoing: "color:#36f;"
-}
 </script>
 <table role="grid" style="display: inline-table">
     <thead>
@@ -17,10 +12,7 @@ const table = {
     </thead>
     <tbody>
 	{#each content as item}
-	    <tr>
-		<td>{item[0]}</td>
-		<td style={table[item[1]]}>{item[1]}</td>
-	    </tr>
+	<Entry item={item}/>
 	{/each}
     </tbody>
 </table>
@@ -34,11 +26,5 @@ const table = {
     }
     tr {
 	border: 5px solid white;
-    }
-    td{
-	border: 2px solid white;
-	margin: auto;
-	border-collapse: collapse;
-	text-align: center;
     }
 </style>

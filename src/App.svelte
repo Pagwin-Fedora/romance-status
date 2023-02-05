@@ -11,8 +11,7 @@
 		data = await fetch(window.origin + "/status.json").then(res=>res.json());
 	    }
 	    catch(e){}
-	    console.log(data);
-	    await sleep(500);
+	    await sleep(50);
 	}
     });
 </script>
