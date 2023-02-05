@@ -3,7 +3,7 @@ import "@picocss/pico/css/pico.min.css";
 export let content;
 const table = {
     Complete: "color:green;",
-    Failure: "color:red;",
+    Failed: "color:red;",
     Pending: "color:#bbb;",
     Ongoing: "color:#36f;"
 }
