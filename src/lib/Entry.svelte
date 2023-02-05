@@ -12,11 +12,14 @@ const table = {
     Ongoing: "color:#36f;"
 }
 let stdout_contents = "", stderr_contents = "";
+var headers = new Headers();
+headers.append('pragma', 'no-cache');
+headers.append('cache-control', 'no-cache');
 onMount(async ()=>{
     while(true){
 	try{
-	    stdout_contents = await fetch(window.origin + "/" + item[0] + "/stdout.log").then(res=>res.text());
-	    stderr_contents = await fetch(window.origin + "/" + item[0] + "/stderr.log").then(res=>res.text());
+	    stdout_contents = await fetch(window.origin + "/" + item[0] + "/stdout.log",{headers}).then(res=>res.text());
+	    stderr_contents = await fetch(window.origin + "/" + item[0] + "/stderr.log",{headers}).then(res=>res.text());
 	}
 	catch(e){
 	}
