@@ -38,7 +38,7 @@ onMount(async ()=>{
 	    {stderr_contents}</span>
 	</details>
     </td>
-    <td style={table[item[1]]}>{item[1]}</td>
+    <td class="stat" style={table[item[1]]}>{item[1]}</td>
 </tr>
 <style>
     td{
@@ -52,6 +52,10 @@ onMount(async ()=>{
     }
     .log{
 	white-space: pre-line;
+    }
+    .stat{
+	display: table-cell;
+	vertical-align:top;
     }
 
 </style>
